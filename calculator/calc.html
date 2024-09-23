@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web calculator</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <div id="bg">
+   
+        <div id="calc">
+            <input id="display" type="text" readonly>
+       
+        <div id="btn">
+            <button type="submit" onclick="disp_num('1')">1</button>
+            <button type="submit" onclick="disp_num('2')">2</button>
+            <button type="submit" onclick="disp_num('3')">3</button>
+            <button type="submit" onclick="disp_num('+')" id="sym">+</button>
+            <button type="submit" onclick="disp_num('4')">4</button>
+            <button type="submit" onclick="disp_num('5')">5</button>
+            <button type="submit" onclick="disp_num('6')">6</button>
+            <button type="submit" onclick="disp_num('-')"id="sym">-</button>
+            <button type="submit" onclick="disp_num('7')">7</button>
+            <button type="submit" onclick="disp_num('8')">8</button>
+            <button type="submit" onclick="disp_num('9')">9</button>
+            <button type="submit" onclick="disp_num('*')"id="sym">*</button>
+            <button type="submit" onclick="disp_num('0')">0</button>
+            <button type="submit" onclick="calculate('=')"id="sym">=</button>
+            <button type="submit" onclick="disp_num('.')">.</button>
+            <button type="submit" onclick="disp_num('/')"id="sym">/</button>
+            <button type="submit" onclick="disp_num('%')"id="sym">%</button>
+            <button type="submit" onclick="clear_disp('C')"id="c">C</button>
+        </div>
+    </div>
+        
+    </div>
+</body>
+<script>
+    const display=document.getElementById("display");
+
+    function disp_num(input){
+        display.value +=input;
+    }
+    function calculate(){
+        try{
+            display.value=eval(display.value);
+        }
+        catch(error){
+            display.value="error";
+        }
+        
+        
+
+    }
+    function clear_disp(){
+        display.value ="";
+    }
+</script>
+</html>
